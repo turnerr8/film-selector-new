@@ -1,6 +1,7 @@
 import { motion as m } from 'framer-motion';
 import { useState } from 'react';
 import { userStore } from '../utils/UesrStore';
+import Link from 'next/link';
 
 export default function Services() {
 	const [provider, setProvider] = useState(userStore.getProvider());
@@ -17,11 +18,25 @@ export default function Services() {
 				{provider.map((curSer) => {
 					return (
 						<li key={curSer.id}>
-							<button className='btn'>{curSer.name}</button>
+							<button
+								className={`  ${curSer.selected ? ' bg-green-400' : ''}`}
+								onClick={() => {
+									const newArr = provider.map((curGen) => {
+										if (curGen.id === curSer.id) {
+											curGen.selected = !curGen.selected;
+										}
+										return curGen;
+									});
+									setProvider(newArr);
+								}}
+							>
+								{curSer.name}
+							</button>
 						</li>
 					);
 				})}
 			</ul>
+			<Link href='/years'> years</Link>
 		</m.div>
 	);
 }

@@ -4,7 +4,6 @@ import { Movies } from '../utils/Movies';
 import { useState, useEffect } from 'react';
 import { userStore } from '../utils/UesrStore';
 
-
 export default function Genres() {
 	const [genres, setGenres] = useState(userStore.getGenre());
 	const [selectedGenre, setSelectedGenre] = useState([]);
@@ -23,7 +22,7 @@ export default function Genres() {
 				{genres.map((genre) => {
 					return (
 						<button
-							className={`btn ${genre.selected ? ' bg-green-400' : ''}`}
+							className={`  ${genre.selected ? ' bg-green-400' : ''}`}
 							onClick={() => {
 								const newArr = genres.map((curGen) => {
 									if (curGen.id === genre.id) {

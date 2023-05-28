@@ -1,6 +1,6 @@
 import Link from 'next/link';
 export default function Navbar() {
-    const available = 1000
+	const available = 1000;
 	return (
 		<>
 			<input type='checkbox' id='my-modal-4' className='modal-toggle' />
@@ -15,7 +15,7 @@ export default function Navbar() {
 					</p>
 				</label>
 			</label>
-			<nav className='flex justify-between items-center list-none py-4 px-6 z-50'>
+			<nav className='flex justify-between items-center list-none py-4 px-6 z-40'>
 				<Link href='/about'>
 					<li>About</li>
 				</Link>
@@ -29,9 +29,9 @@ export default function Navbar() {
 				</li>
 				<li>
 					<div className='flex flex-col items-center justify-center'>
-                        <p className=' text-sm'>available:</p>
-                        <p className='grow text-2xl'>{available}</p>
-                    </div>
+						<p className=' text-sm'>available:</p>
+						<p className='grow text-2xl'>{available}</p>
+					</div>
 				</li>
 			</nav>
 		</>

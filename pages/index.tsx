@@ -11,6 +11,7 @@ export default function Home() {
 	useEffect(() => {
 		userStore.fetchGenres();
 		userStore.fetchStreaming();
+		userStore.finalMovies = [];
 	}, []);
 	return (
 		<m.div>
@@ -29,7 +30,7 @@ export default function Home() {
 				<h1 className='text-5xl'>Welcome to film selector</h1>
 				<p className='text-xl'>Find your next fav here</p>
 				<div className='flex items-center justify-center'>
-					<Link href={'/'} className='btn btn-outline mx-5'>
+					<Link href={'/results'} className='btn btn-outline mx-5'>
 						I'm feeling
 						<br /> lucky
 					</Link>
